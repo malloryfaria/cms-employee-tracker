@@ -28,22 +28,35 @@ npm i
 
 // Ensure you have set up MySQL and you have a legacy password to log in with ****
 
-// Create a .env file in the root of the folder and fill out the following with your information:
-DB_NAME='employees_db'
-DB_USER='root'
-DB_PW='examplepassword'
+// Create a connection.js file in the db folder and paste the following code in but fill it out with your information:
+```
+const mysql = require("mysql2");
+
+const connection = mysql.createConnection({
+  host: "localhost",
+  // Your MySQL username
+  user: "root",
+  // Your MySQL password
+  password: "yourpasswordhere",
+  database: "employees_db"
+});
+
+connection.connect(function (err) {
+  if (err) throw err;
+});
+
+module.exports = connection;
+
+```
 
 // From the db folder, login to your MySQL using:
 mysql -u root -p
 
 // Then, run this command to create the database:
-source schema.sql;
+source db/schema.sql;
 
 // Then quit the MySQL shell by typing
 quit;
-
-// Seed the test data into the database by typing:
-npm run seeds
 
 // Then use the below command to start the server:
 npm start
@@ -57,7 +70,7 @@ Use this application to build on the front end for an e-commerce site to this ba
 // TODO
 
 ## Languages/Technology Used
-Node, Express.js API, Sequelize, MySQL
+Node, console.table, MySQL2
 
 ## Screenshots
 ![npm seed command](./assets/images/screenshot.jpg?raw=true) <br /><br />

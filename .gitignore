@@ -106,3 +106,7 @@ dist
 # Macbook
 .DS_Store/
 .DS_Store
+
+# Connection/login info
+connection.js
+connection.js/
