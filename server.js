@@ -117,9 +117,6 @@ function loadPrompts() {
       case "REMOVE_DEPARTMENT":
         removeDepartment();
         break;
-      case "VIEW_UTILIZED_BUDGET_BY_DEPARTMENT":
-        viewUtilizedBudgetByDepartment();
-        break;
       case "VIEW_ROLES":
         viewRoles();
         break;
