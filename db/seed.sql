@@ -1,3 +1,5 @@
+-- Use this for seeding test data if you wish
+
 use employees_db;
 
 INSERT INTO department(name)

@@ -1,16 +1,21 @@
--- Drop database
+-- Drop database if it exists
 
 DROP DATABASE IF EXISTS employees_db;
 
--- Create database
+-- Create database if it doesn't exist
+
 CREATE DATABASE employees_db;
 
 USE employees_db;
+
+-- Create the department table
 
 CREATE TABLE department (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(30) UNIQUE NOT NULL
 );
+
+-- Create the role table
 
 CREATE TABLE role (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -20,6 +25,8 @@ CREATE TABLE role (
   INDEX dep_ind (department_id),
   CONSTRAINT fk_department FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE CASCADE
 );
+
+-- Create the employee table
 
 CREATE TABLE employee (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
