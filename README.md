@@ -64,7 +64,7 @@ npm start
 ```
 
 ## Usage
-Use this application to build on the front end for an e-commerce site to this back end.
+Use this application to keep track of your employees.
 
 ## Demo
 // TODO

@@ -11,15 +11,15 @@ function init() {
 
   console.log(logo);
 
-  loadMainPrompts();
+  loadPrompts();
 }
 
-function loadMainPrompts() {
+function loadPrompts() {
   prompt([
     {
       type: "list",
       name: "choice",
-      message: "Welcome! What would you like to do?",
+      message: "Welcome to the CMS Employee Tracker! What would you like to do?",
       choices: [
         {
           name: "View All Employees",
@@ -144,7 +144,7 @@ function viewEmployees() {
       console.log("\n");
       console.table(employees);
     })
-    .then(() => loadMainPrompts());
+    .then(() => loadPrompts());
 }
 
 // View all employees that belong to a department
@@ -161,7 +161,7 @@ function viewEmployeesByDepartment() {
         {
           type: "list",
           name: "departmentId",
-          message: "Which department would you like to see employees for?",
+          message: "Which department would you like to see the employees for?",
           choices: departmentChoices
         }
       ])
@@ -171,7 +171,7 @@ function viewEmployeesByDepartment() {
           console.log("\n");
           console.table(employees);
         })
-        .then(() => loadMainPrompts())
+        .then(() => loadPrompts())
     });
 }
 
@@ -203,7 +203,7 @@ function viewEmployeesByManager() {
             console.table(employees);
           }
         })
-        .then(() => loadMainPrompts())
+        .then(() => loadPrompts())
     });
 }
 
@@ -227,7 +227,7 @@ function removeEmployee() {
       ])
         .then(res => db.removeEmployee(res.employeeId))
         .then(() => console.log("Removed employee from the database"))
-        .then(() => loadMainPrompts())
+        .then(() => loadPrompts())
     })
 }
 
@@ -269,7 +269,7 @@ function updateEmployeeRole() {
               ])
                 .then(res => db.updateEmployeeRole(employeeId, res.roleId))
                 .then(() => console.log("Updated employee's role"))
-                .then(() => loadMainPrompts())
+                .then(() => loadPrompts())
             });
         });
     })
@@ -314,7 +314,7 @@ function updateEmployeeManager() {
               ])
                 .then(res => db.updateEmployeeManager(employeeId, res.managerId))
                 .then(() => console.log("Updated employee's manager"))
-                .then(() => loadMainPrompts())
+                .then(() => loadPrompts())
             })
         })
     })
@@ -328,7 +328,7 @@ function viewRoles() {
       console.log("\n");
       console.table(roles);
     })
-    .then(() => loadMainPrompts());
+    .then(() => loadPrompts());
 }
 
 // Add a role
@@ -360,7 +360,7 @@ function addRole() {
         .then(role => {
           db.createRole(role)
             .then(() => console.log(`Added ${role.title} to the database`))
-            .then(() => loadMainPrompts())
+            .then(() => loadPrompts())
         })
     })
 }
@@ -386,7 +386,7 @@ function removeRole() {
       ])
         .then(res => db.removeRole(res.roleId))
         .then(() => console.log("Removed role from the database"))
-        .then(() => loadMainPrompts())
+        .then(() => loadPrompts())
     })
 }
 
@@ -398,7 +398,7 @@ function viewDepartments() {
       console.log("\n");
       console.table(departments);
     })
-    .then(() => loadMainPrompts());
+    .then(() => loadPrompts());
 }
 
 // Add a department
@@ -413,7 +413,7 @@ function addDepartment() {
       let name = res;
       db.createDepartment(name)
         .then(() => console.log(`Added ${name.name} to the database`))
-        .then(() => loadMainPrompts())
+        .then(() => loadPrompts())
     })
 }
 
@@ -436,7 +436,7 @@ function removeDepartment() {
       })
         .then(res => db.removeDepartment(res.departmentId))
         .then(() => console.log(`Removed department from the database`))
-        .then(() => loadMainPrompts())
+        .then(() => loadPrompts())
     })
 }
 
@@ -448,10 +448,10 @@ function viewUtilizedBudgetByDepartment() {
       console.log("\n");
       console.table(departments);
     })
-    .then(() => loadMainPrompts());
+    .then(() => loadPrompts());
 }
 
-// Add an employee
+// Add an employee 
 function addEmployee() {
   prompt([
     {
@@ -513,14 +513,14 @@ function addEmployee() {
                     .then(() => console.log(
                       `Added ${firstName} ${lastName} to the database`
                     ))
-                    .then(() => loadMainPrompts())
+                    .then(() => loadPrompts())
                 })
             })
         })
     })
 }
 
-// Exit the application
+// Exit the application 
 function quit() {
   console.log("Thank you for using the employee tracker, goodbye!");
   process.exit();
