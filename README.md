@@ -17,7 +17,6 @@
 A command-line application to manage a company's employee database, using Node.js, Inquirer, and MySQL.
 
 ## Installation
-
 ```
 // Clone the repository to your local machine using:|
 
@@ -27,9 +26,11 @@ git clone git@github.com:malloryfaria/cms-employee-tracker.git
 npm i
 
 // Ensure you have set up MySQL and you have a legacy password to log in with ****
-
-// Create a connection.js file in the db folder and paste the following code in but fill it out with your information:
 ```
+
+```
+// Create a connection.js file in the db folder and paste the following code in but fill it out with your information:
+
 const mysql = require("mysql2");
 
 const connection = mysql.createConnection({
@@ -47,6 +48,7 @@ connection.connect(function (err) {
 
 module.exports = connection;
 
+```
 ```
 
 // From the db folder, login to your MySQL using:
