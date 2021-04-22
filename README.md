@@ -69,7 +69,9 @@ npm start
 Use this application to keep track of your employees.
 
 ## Demo
-// TODO
+The following video shows the application in use:
+
+[![Demo of the CMS employee tracker application in use](https://img.youtube.com/vi/x8b9WLeJjQ8/0.jpg)](https://www.youtube.com/watch?v=x8b9WLeJjQ8) 
 
 ## Languages/Technology Used
 Node, console.table, MySQL2
