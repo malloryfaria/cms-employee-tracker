@@ -437,17 +437,6 @@ function removeDepartment() {
     })
 }
 
-// View all departments and show their total utilized department budget
-function viewUtilizedBudgetByDepartment() {
-  db.viewDepartmentBudgets()
-    .then(([rows]) => {
-      let departments = rows;
-      console.log("\n");
-      console.table(departments);
-    })
-    .then(() => loadPrompts());
-}
-
 // Add an employee 
 function addEmployee() {
   prompt([
