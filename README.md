@@ -75,8 +75,8 @@ Use this application to keep track of your employees.
 Node, console.table, MySQL2
 
 ## Screenshots
-![npm seed command](./assets/images/screenshot.jpg?raw=true) <br /><br />
-![npm start command](./assets/images/screenshot2.jpg?raw=true) <br /><br />
+![npm start command](./assets/images/screenshot.jpg?raw=true) <br /><br />
+![example table](./assets/images/screenshot2.jpg?raw=true) <br /><br />
 
 ## License
 
